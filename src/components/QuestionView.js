@@ -30,7 +30,7 @@ class QuestionView extends Component {
   getQuestions = () => {
     $.ajax({
      
-      url: `/questions?page_num=${this.state.page}`, //TODO: update request URL
+      url: `https://triviasiabl.herokuapp.com/questions?page_num=1/questions?page_num=${this.state.page}`, //TODO: update request URL
       type: "GET",
       headers: {
         "accept": "application/json",
