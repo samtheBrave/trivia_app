@@ -1,0 +1,11 @@
+.form-view > label {
+  padding: 0px 0px 10px;
+}
+
+input {
+  width: 150%;
+}
+
+#add-form {
+  text-align: center;
+}
