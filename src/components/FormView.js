@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import '../stylesheets/FormView.css';
 import Select  from 'react-dropdown-select'
- 
+const backend = 'https://triviasiabl.herokuapp.com/';
+
 class FormView extends Component {
   constructor(props){
     super();
@@ -24,7 +25,7 @@ class FormView extends Component {
   componentDidMount(){
      
     $.ajax({
-      url: `/categories`,
+      url: backend+`/categories`,
       headers: {
         'Authorization':'Bearer '+ this.props.location.token_data,   
         'Content-Type':'application/json'
@@ -45,7 +46,7 @@ class FormView extends Component {
   submitCategory = (id_data,type_cat) => {
     
     $.ajax({
-      url: '/new_category', 
+      url: backend+'/new_category', 
       headers: {
         'Authorization':'Bearer '+ this.props.location.token_data,   
         'Content-Type':'application/json'
@@ -79,7 +80,7 @@ class FormView extends Component {
     event.preventDefault();
     $.ajax({
       
-      url: '/new_questions', //TODO: update request URL
+      url: backend+'/new_questions', //TODO: update request URL
       type: "POST",
       headers: {
         'Authorization':'Bearer '+ this.props.location.token_data,   

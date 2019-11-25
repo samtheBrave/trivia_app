@@ -5,6 +5,7 @@ import Question from './Question';
 import Search from './Search';
 import $ from 'jquery';
 const authConfig = require("../auth_config.json");
+const backend = 'https://triviasiabl.herokuapp.com/';
 
 class QuestionView extends Component {
   constructor(props){
@@ -30,7 +31,7 @@ class QuestionView extends Component {
   getQuestions = () => {
     $.ajax({
      
-      url: `/questions?page_num=${this.state.page}`, //TODO: update request URL
+      url: backend+`/questions?page_num=${this.state.page}`, //TODO: update request URL
       type: "GET",
       headers: {
         "accept": "application/json",
@@ -77,7 +78,7 @@ class QuestionView extends Component {
 
   getByCategory= (id, page = 1) => {
     $.ajax({
-      url:  `/categories/${id}/questions?page_num=${page}`, //TODO: update request URL
+      url:  backend+`/categories/${id}/questions?page_num=${page}`, //TODO: update request URL
       headers: {
         'Authorization':'Bearer '+ this.props.token,   
         'Content-Type':'application/json',
@@ -102,7 +103,7 @@ class QuestionView extends Component {
 
   submitSearch = (searchTerm,page=1) => {
     $.ajax({
-      url:  `/searchquestions?page_num=${page}`, //TODO: update request URL
+      url:  backend+`/searchquestions?page_num=${page}`, //TODO: update request URL
       type: "POST",
       dataType: 'json',
       
@@ -133,7 +134,7 @@ class QuestionView extends Component {
     if(action === 'DELETE') {
       if(window.confirm('are you sure you want to delete the question?')) {
         $.ajax({
-          url:`/questions/${id}`, //TODO: update request URL
+          url:backend+`/questions/${id}`, //TODO: update request URL
           headers: {
             'Authorization':'Bearer '+ this.props.token,   
             'Content-Type':'application/json',

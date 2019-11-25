@@ -4,6 +4,7 @@ import $ from 'jquery';
 import '../stylesheets/QuizView.css';
 
 const questionsPerPlay = 5; 
+const backend = 'https://triviasiabl.herokuapp.com/';
 
 class QuizView extends Component {
   constructor(props){
@@ -22,7 +23,7 @@ class QuizView extends Component {
 
   componentDidMount(){
     $.ajax({
-      url: `/categories`,
+      url: backend+`/categories`,
       headers: {
         'Authorization':'Bearer '+ this.props.location.token_data,   
         'Content-Type':'application/json'
@@ -52,7 +53,7 @@ class QuizView extends Component {
     if(this.state.currentQuestion.id) { previousQuestions.push(this.state.currentQuestion.id) }
 
     $.ajax({
-      url: '/quizzes',
+      url: backend+'/quizzes',
       headers: {
         'Authorization':'Bearer '+ this.props.location.token_data,   
         'Content-Type':'application/json'

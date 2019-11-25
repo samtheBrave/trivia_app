@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import '../stylesheets/EditFormView.css';
 import Select  from 'react-dropdown-select'
- 
+const backend = 'https://triviasiabl.herokuapp.com/';
+
 class EditFormView extends Component {
   constructor(props){
     super();
@@ -23,7 +24,7 @@ class EditFormView extends Component {
   componentDidMount(){
      
     $.ajax({
-      url: `/category`,
+      url: backend+`/category`,
        //TODO: update request URL
       type: "GET",
       success: (result) => {
@@ -45,7 +46,7 @@ class EditFormView extends Component {
      
      $.ajax({
       
-      url: '/update_questions/'+this.state.id, //TODO: update request URL
+      url: backend+'/update_questions/'+this.state.id, //TODO: update request URL
       type: "PATCH",
       headers: {
         'Authorization':'Bearer '+ this.props.token,   

@@ -4,6 +4,8 @@ import '../stylesheets/App.css';
 import EditFormView from './EditFormView';
 import $ from 'jquery';
  
+const backend = 'https://triviasiabl.herokuapp.com/';
+
 class EditQuestion extends Component {
   constructor(props){
     super();
@@ -27,7 +29,7 @@ class EditQuestion extends Component {
   getQuestions = () => {
     $.ajax({
      
-      url: `/questions?page_num=${this.state.page}`, //TODO: update request URL
+      url: backend+`/questions?page_num=${this.state.page}`, //TODO: update request URL
       type: "GET",
       success: (result) => {
         this.setState({
@@ -71,7 +73,7 @@ class EditQuestion extends Component {
 
   getByCategory= (id, page = 1) => {
     $.ajax({
-      url: `/categories/${id}/questions?page_num=${page}`, //TODO: update request URL
+      url: backend+`/categories/${id}/questions?page_num=${page}`, //TODO: update request URL
       headers: {
         'Authorization':'Bearer '+  this.props.location.token_data,   
         'Content-Type':'application/json'
