@@ -83,7 +83,9 @@ class QuestionView extends Component {
         'Authorization':'Bearer '+ this.props.token,   
         'Content-Type':'application/json',
         "accept": "application/json",
-         
+        'Access-Control-Allow-Origin': "*",
+        'Access-Control-Allow-Methods': "GET,HEAD,OPTIONS,POST,PUT",
+        'Access-Control-Allow-Headers': "Origin, X-Requested-With, Content-Type, Accept, Authorization"
       },
       type: "GET",
       success: (result) => {
