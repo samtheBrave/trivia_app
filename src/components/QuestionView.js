@@ -111,10 +111,6 @@ class QuestionView extends Component {
       },
       contentType: 'application/json',
       data: JSON.stringify({searchTerm: searchTerm}),
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
       success: (result) => {
         this.setState({
           searchQuery: searchTerm,
