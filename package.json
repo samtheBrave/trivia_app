@@ -5,13 +5,13 @@
   "proxy": "https://triviasiabl.herokuapp.com/",
   "scripts": {
     "start": "npm-run-all --parallel spa server",
-    "build": "react-scripts build && mv _redirects dist",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "spa": "react-scripts start",
     "server": "node server.js",
     "server:dev": "nodemon server.js",
-    "heroku-postbuild": "react-scripts build",
+    "heroku-postbuild": "react-scripts build ",
     "dev": "npm-run-all --parallel spa server:dev"
   },
   "dependencies": {
@@ -40,11 +40,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "devServer": {
-    "compress": true,
-    "public": "https://trivia-260103.appspot.com/"
-    
   },
   "browserslist": {
     "production": [
