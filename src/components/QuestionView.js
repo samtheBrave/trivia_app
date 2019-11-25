@@ -4,7 +4,7 @@ import '../stylesheets/App.css';
 import Question from './Question';
 import Search from './Search';
 import $ from 'jquery';
-const authConfig = require("./src/auth_config.json");
+const authConfig = require("../auth_config.json");
 
 class QuestionView extends Component {
   constructor(props){
