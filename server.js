@@ -5,6 +5,7 @@ const jwt = require("express-jwt");
 const jwksRsa = require("jwks-rsa");
 const { join } = require("path");
 const authConfig = require("./src/auth_config.json");
+const cors = require('cors');
 
 const app = express();
 
@@ -16,7 +17,20 @@ if (!authConfig.domain || !authConfig.audience) {
   );
 }
 
+
+var whitelist = ['https://triviasiabl.herokuapp.com/']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
 app.use(morgan("dev"));
+app.use(cors(corsOptions));
 app.use(helmet());
 app.use(express.static(join(__dirname, "build")));
 

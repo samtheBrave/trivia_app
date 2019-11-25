@@ -41,6 +41,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+
   "browserslist": {
     "production": [
       ">0.2%",
@@ -53,6 +54,7 @@
       "last 1 safari version"
     ]
   },
+  
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
@@ -101,6 +103,7 @@
   "babel": {
     "presets": [
       "react-app"
-    ]
-  }
+    ]}
+
+
 }

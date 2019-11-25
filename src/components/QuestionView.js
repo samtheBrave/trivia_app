@@ -30,11 +30,11 @@ class QuestionView extends Component {
   getQuestions = () => {
     $.ajax({
      
-      url: authConfig.backend+`/questions?page_num=${this.state.page}`, //TODO: update request URL
+      url: `/questions?page_num=${this.state.page}`, //TODO: update request URL
       type: "GET",
       headers: {
         "accept": "application/json",
-        "Access-Control-Request-Headers":"*",
+        
       },
       success: (result) => {
         this.setState({
@@ -77,12 +77,12 @@ class QuestionView extends Component {
 
   getByCategory= (id, page = 1) => {
     $.ajax({
-      url: authConfig.backend+`/categories/${id}/questions?page_num=${page}`, //TODO: update request URL
+      url:  `/categories/${id}/questions?page_num=${page}`, //TODO: update request URL
       headers: {
         'Authorization':'Bearer '+ this.props.token,   
         'Content-Type':'application/json',
         "accept": "application/json",
-        "Access-Control-Request-Headers":"Content-Type,*",
+         
       },
       type: "GET",
       success: (result) => {
@@ -102,17 +102,16 @@ class QuestionView extends Component {
 
   submitSearch = (searchTerm,page=1) => {
     $.ajax({
-      url: authConfig.backend+`/searchquestions?page_num=${page}`, //TODO: update request URL
+      url:  `/searchquestions?page_num=${page}`, //TODO: update request URL
       type: "POST",
       dataType: 'json',
-      headers: {
-        "accept": "application/json",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
-        
-      },
+      
       contentType: 'application/json',
       data: JSON.stringify({searchTerm: searchTerm}),
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
       success: (result) => {
         this.setState({
           searchQuery: searchTerm,
@@ -124,7 +123,7 @@ class QuestionView extends Component {
         return;
       },
       error: (error) => {
-        alert('No Permission to search . Please login')
+        alert('Unable to load questions. Please try your request again')
         return;
       }
     })
@@ -134,13 +133,12 @@ class QuestionView extends Component {
     if(action === 'DELETE') {
       if(window.confirm('are you sure you want to delete the question?')) {
         $.ajax({
-          url:authConfig.backend+ `/questions/${id}`, //TODO: update request URL
+          url:`/questions/${id}`, //TODO: update request URL
           headers: {
             'Authorization':'Bearer '+ this.props.token,   
             'Content-Type':'application/json',
             "accept": "application/json",
-            "Access-Control-Allow-Credentials": true,
-            "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
+            
           },
           type: "DELETE",
           success: (result) => {
