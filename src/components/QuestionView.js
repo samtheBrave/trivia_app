@@ -34,7 +34,9 @@ class QuestionView extends Component {
       type: "GET",
       headers: {
         "accept": "application/json",
-        "Access-Control-Request-Headers":"*"
+        "Access-Control-Request-Headers":"Content-Type,*",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
       },
       success: (result) => {
         this.setState({
@@ -82,7 +84,9 @@ class QuestionView extends Component {
         'Authorization':'Bearer '+ this.props.token,   
         'Content-Type':'application/json',
         "accept": "application/json",
-        "Access-Control-Request-Headers":"*"
+        "Access-Control-Request-Headers":"Content-Type,*",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
       },
       type: "GET",
       success: (result) => {
@@ -107,7 +111,10 @@ class QuestionView extends Component {
       dataType: 'json',
       headers: {
         "accept": "application/json",
-        "Access-Control-Request-Headers":"*"
+        "Access-Control-Request-Headers":"Content-Type,*",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
+        
       },
       contentType: 'application/json',
       data: JSON.stringify({searchTerm: searchTerm}),
@@ -137,7 +144,9 @@ class QuestionView extends Component {
             'Authorization':'Bearer '+ this.props.token,   
             'Content-Type':'application/json',
             "accept": "application/json",
-            "Access-Control-Request-Headers":"*"
+            "Access-Control-Request-Headers":"Content-Type,*",
+            "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
           },
           type: "DELETE",
           success: (result) => {
