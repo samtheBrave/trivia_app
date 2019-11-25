@@ -6,7 +6,7 @@ const jwksRsa = require("jwks-rsa");
 const { join } = require("path");
 const authConfig = require("./src/auth_config.json");
 const cors = require('cors');
-
+ 
 const app = express();
 
 const port = process.env.SERVER_PORT || 3001;
