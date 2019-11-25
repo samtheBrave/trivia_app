@@ -31,7 +31,7 @@ class QuestionView extends Component {
   getQuestions = () => {
     $.ajax({
      
-      url: `https://triviasiabl.herokuapp.com//questions?page_num=${this.state.page}`, //TODO: update request URL
+      url: backend+`/questions?page_num=${this.state.page}`, //TODO: update request URL
       type: "GET",
       headers: {
         "accept": "application/json",
@@ -83,9 +83,7 @@ class QuestionView extends Component {
         'Authorization':'Bearer '+ this.props.token,   
         'Content-Type':'application/json',
         "accept": "application/json",
-        'Access-Control-Allow-Origin': "*",
-        'Access-Control-Allow-Methods': "GET,HEAD,OPTIONS,POST,PUT",
-        'Access-Control-Allow-Headers': "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+         
       },
       type: "GET",
       success: (result) => {
