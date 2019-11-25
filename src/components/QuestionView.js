@@ -4,7 +4,8 @@ import '../stylesheets/App.css';
 import Question from './Question';
 import Search from './Search';
 import $ from 'jquery';
- 
+const authConfig = require("./src/auth_config.json");
+
 class QuestionView extends Component {
   constructor(props){
     super();
@@ -29,8 +30,12 @@ class QuestionView extends Component {
   getQuestions = () => {
     $.ajax({
      
-      url: `/questions?page_num=${this.state.page}`, //TODO: update request URL
+      url: authConfig.backend+`/questions?page_num=${this.state.page}`, //TODO: update request URL
       type: "GET",
+      headers: {
+        "accept": "application/json",
+        "Access-Control-Request-Headers":"*"
+      },
       success: (result) => {
         this.setState({
           questions: result.questions,
@@ -72,10 +77,12 @@ class QuestionView extends Component {
 
   getByCategory= (id, page = 1) => {
     $.ajax({
-      url: `/categories/${id}/questions?page_num=${page}`, //TODO: update request URL
+      url: authConfig.backend+`/categories/${id}/questions?page_num=${page}`, //TODO: update request URL
       headers: {
         'Authorization':'Bearer '+ this.props.token,   
-        'Content-Type':'application/json'
+        'Content-Type':'application/json',
+        "accept": "application/json",
+        "Access-Control-Request-Headers":"*"
       },
       type: "GET",
       success: (result) => {
@@ -95,9 +102,13 @@ class QuestionView extends Component {
 
   submitSearch = (searchTerm,page=1) => {
     $.ajax({
-      url: `/searchquestions?page_num=${page}`, //TODO: update request URL
+      url: authConfig.backend+`/searchquestions?page_num=${page}`, //TODO: update request URL
       type: "POST",
       dataType: 'json',
+      headers: {
+        "accept": "application/json",
+        "Access-Control-Request-Headers":"*"
+      },
       contentType: 'application/json',
       data: JSON.stringify({searchTerm: searchTerm}),
       xhrFields: {
@@ -125,10 +136,12 @@ class QuestionView extends Component {
     if(action === 'DELETE') {
       if(window.confirm('are you sure you want to delete the question?')) {
         $.ajax({
-          url: `/questions/${id}`, //TODO: update request URL
+          url:authConfig.backend+ `/questions/${id}`, //TODO: update request URL
           headers: {
             'Authorization':'Bearer '+ this.props.token,   
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            "accept": "application/json",
+            "Access-Control-Request-Headers":"*"
           },
           type: "DELETE",
           success: (result) => {
