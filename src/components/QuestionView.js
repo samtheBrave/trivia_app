@@ -34,7 +34,7 @@ class QuestionView extends Component {
       type: "GET",
       headers: {
         "accept": "application/json",
-        "Access-Control-Request-Headers":*",
+        "Access-Control-Request-Headers":"*",
       },
       success: (result) => {
         this.setState({
