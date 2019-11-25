@@ -2,7 +2,6 @@
   "name": "auth0-react-03-calling-an-api",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://triviasiabl.herokuapp.com/",
   "scripts": {
     "start": "npm-run-all --parallel spa server",
     "build": "react-scripts build",
