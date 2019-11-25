@@ -34,9 +34,7 @@ class QuestionView extends Component {
       type: "GET",
       headers: {
         "accept": "application/json",
-        "Access-Control-Request-Headers":"Content-Type,*",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
+        "Access-Control-Request-Headers":*",
       },
       success: (result) => {
         this.setState({
@@ -85,8 +83,6 @@ class QuestionView extends Component {
         'Content-Type':'application/json',
         "accept": "application/json",
         "Access-Control-Request-Headers":"Content-Type,*",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
       },
       type: "GET",
       success: (result) => {
@@ -111,7 +107,6 @@ class QuestionView extends Component {
       dataType: 'json',
       headers: {
         "accept": "application/json",
-        "Access-Control-Request-Headers":"Content-Type,*",
         "Access-Control-Allow-Credentials": true,
         "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
         
@@ -129,7 +124,7 @@ class QuestionView extends Component {
         return;
       },
       error: (error) => {
-        alert('Unable to load questions. Please try your request again')
+        alert('No Permission to search . Please login')
         return;
       }
     })
@@ -144,7 +139,6 @@ class QuestionView extends Component {
             'Authorization':'Bearer '+ this.props.token,   
             'Content-Type':'application/json',
             "accept": "application/json",
-            "Access-Control-Request-Headers":"Content-Type,*",
             "Access-Control-Allow-Credentials": true,
             "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
           },
