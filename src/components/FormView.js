@@ -59,10 +59,7 @@ class FormView extends Component {
         type: type_cat,
        
       }),
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
+      
       success: (result) => {
         this.state.categories.push({id:id_data,type:type_cat})
         this.updatecategories(id_data)
@@ -94,10 +91,7 @@ class FormView extends Component {
         difficulty: this.state.difficulty,
         category: this.state.category
       }),
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
+     
       success: (result) => {
         document.getElementById("add-question-form").reset();
         return;
