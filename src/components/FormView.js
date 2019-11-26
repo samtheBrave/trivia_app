@@ -50,7 +50,7 @@ class FormView extends Component {
       url: backend+'/new_category',
       beforeSend: function(xhrObj){
         //xhrObj.setRequestHeader("Content-Type","application/json");
-        //xhrObj.setRequestHeader("Accept","application/json");
+        xhrObj.setRequestHeader("Accept","application/json");
       xhrObj.setRequestHeader("Access-Control-Allow-Headers","x-requested-with");
       }, 
       headers: {
@@ -90,7 +90,7 @@ class FormView extends Component {
       type: "POST",
       beforeSend: function(xhrObj){
         //xhrObj.setRequestHeader("Content-Type","application/json");
-        //xhrObj.setRequestHeader("Accept","application/json");
+      xhrObj.setRequestHeader("Accept","application/json");
       xhrObj.setRequestHeader("Access-Control-Allow-Headers","x-requested-with");
       },
       headers: {
