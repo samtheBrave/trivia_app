@@ -9,7 +9,7 @@ const cors = require('cors');
  
 const app = express();
 
-const port = process.env.SERVER_PORT || 3001;
+const port = process.env.PORT || 3001;
 
 if (!authConfig.domain || !authConfig.audience) {
   throw new Error(
@@ -67,5 +67,4 @@ app.all('*', function(req, res, next) {
     next();
   }
 });
-app.listen(port, () => console.log(`Server listening on port ${port}`));
 app.listen(port, () => console.log(`Server listening on port ${port}`));
