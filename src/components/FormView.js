@@ -3,6 +3,7 @@ import $ from 'jquery';
 import '../stylesheets/FormView.css';
 import Select  from 'react-dropdown-select'
 const backend = 'https://cors-anywhere.herokuapp.com/https://triviasiabl.herokuapp.com';
+const backend2 = 'https://triviasiabl.herokuapp.com';
 
 class FormView extends Component {
   constructor(props){
@@ -46,7 +47,12 @@ class FormView extends Component {
   submitCategory = (id_data,type_cat) => {
     
     $.ajax({
-      url: backend+'/new_category', 
+      url: backend+'/new_category',
+      beforeSend: function(xhrObj){
+        //xhrObj.setRequestHeader("Content-Type","application/json");
+        //xhrObj.setRequestHeader("Accept","application/json");
+      xhrObj.setRequestHeader("Access-Control-Allow-Headers","x-requested-with");
+      }, 
       headers: {
         'Authorization':'Bearer '+ this.props.location.token_data,   
         'Content-Type':'application/json'
@@ -59,7 +65,10 @@ class FormView extends Component {
         type: type_cat,
        
       }),
-      
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
       success: (result) => {
         this.state.categories.push({id:id_data,type:type_cat})
         this.updatecategories(id_data)
@@ -79,6 +88,11 @@ class FormView extends Component {
       
       url: backend+'/new_questions', //TODO: update request URL
       type: "POST",
+      beforeSend: function(xhrObj){
+        //xhrObj.setRequestHeader("Content-Type","application/json");
+        //xhrObj.setRequestHeader("Accept","application/json");
+      xhrObj.setRequestHeader("Access-Control-Allow-Headers","x-requested-with");
+      },
       headers: {
         'Authorization':'Bearer '+ this.props.location.token_data,   
         'Content-Type':'application/json'
@@ -91,7 +105,10 @@ class FormView extends Component {
         difficulty: this.state.difficulty,
         category: this.state.category
       }),
-     
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
       success: (result) => {
         document.getElementById("add-question-form").reset();
         return;
