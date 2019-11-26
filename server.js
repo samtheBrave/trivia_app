@@ -7,6 +7,7 @@ const { join } = require("path");
 const authConfig = require("./src/auth_config.json");
 
  
+const app = express();
 
 const port = process.env.SERVER_PORT|| 5000;
 
