@@ -9,7 +9,7 @@ const authConfig = require("./src/auth_config.json");
  
 const app = express();
 
-const port = process.env.SERVER_PORT|| 5000;
+const port = process.env.SERVER_PORT|| 3001;
 
 if (!authConfig.domain || !authConfig.audience) {
   throw new Error(
