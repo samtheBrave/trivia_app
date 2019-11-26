@@ -4,6 +4,8 @@ import '../stylesheets/FormView.css';
 import Select  from 'react-dropdown-select'
 const backend = 'https://cors-anywhere.herokuapp.com/https://triviasiabl.herokuapp.com';
 const backend2 = 'https://triviasiabl.herokuapp.com';
+import withUnmounted from '@ishawnwang/withunmounted'
+
 
 class FormView extends Component {
   constructor(props){
@@ -65,10 +67,7 @@ class FormView extends Component {
         type: type_cat,
        
       }),
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
+     
       success: (result) => {
         this.state.categories.push({id:id_data,type:type_cat})
         this.updatecategories(id_data)
@@ -173,7 +172,7 @@ class FormView extends Component {
             dropdownHeight="300px"
             values={[]}
             onChange={ (value) => {
-              console.log(value[0].value)
+              
               this.updatecategories(value[0].value)
               
             }

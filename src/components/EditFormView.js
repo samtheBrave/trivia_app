@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import '../stylesheets/EditFormView.css';
-import Select  from 'react-dropdown-select'
 const backend = 'https://cors-anywhere.herokuapp.com/https://triviasiabl.herokuapp.com';
 
 class EditFormView extends Component {
@@ -61,10 +60,7 @@ class EditFormView extends Component {
         difficulty: this.state.difficulty,
         category: this.state.category
       }),
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
+       
       success: (result) => {
         
        // document.getElementById("add-question-form").reset();
