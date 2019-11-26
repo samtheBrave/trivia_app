@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import '../stylesheets/EditFormView.css';
 import Select  from 'react-dropdown-select'
-const backend = 'https://triviasiabl.herokuapp.com/';
+const backend = 'https://cors-anywhere.herokuapp.com/https://triviasiabl.herokuapp.com';
 
 class EditFormView extends Component {
   constructor(props){
