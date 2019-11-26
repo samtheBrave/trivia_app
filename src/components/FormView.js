@@ -4,8 +4,6 @@ import '../stylesheets/FormView.css';
 import Select  from 'react-dropdown-select'
 const backend = 'https://cors-anywhere.herokuapp.com/https://triviasiabl.herokuapp.com';
 const backend2 = 'https://triviasiabl.herokuapp.com';
-import withUnmounted from '@ishawnwang/withunmounted'
-
 
 class FormView extends Component {
   constructor(props){
