@@ -5,10 +5,9 @@ const jwt = require("express-jwt");
 const jwksRsa = require("jwks-rsa");
 const { join } = require("path");
 const authConfig = require("./src/auth_config.json");
-const cors = require('cors');
+
  
-const app = express();
-const proxy = require('http-proxy-middleware');
+
 const port = process.env.SERVER_PORT|| 5000;
 
 if (!authConfig.domain || !authConfig.audience) {
@@ -48,5 +47,4 @@ app.use((_, res) => {
 });
 
 
-app.use(proxy(["/questions**", , "/categories**"], { target: "https://triviasiabl.herokuapp.com/:5000" }));
 app.listen(port, () => console.log(`Server listening on port ${port}`));
