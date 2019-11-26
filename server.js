@@ -9,7 +9,7 @@ const cors = require('cors');
  
 const app = express();
 
-const port = process.env.SERVER_PORT|| 80;
+const port = process.env.SERVER_PORT|| 8080;
 
 if (!authConfig.domain || !authConfig.audience) {
   throw new Error(
