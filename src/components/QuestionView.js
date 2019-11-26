@@ -4,7 +4,7 @@ import '../stylesheets/App.css';
 import Question from './Question';
 import Search from './Search';
 import $ from 'jquery';
-const backend = 'https://cors-anywhere.herokuapp.com/https://triviasiabl.herokuapp.com';
+const backend = 'https://cors-anywhere-siabl.herokuapp.com/https://triviasiabl.herokuapp.com';
 
 class QuestionView extends Component {
   hasUnmounted = false;
