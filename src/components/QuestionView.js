@@ -5,7 +5,7 @@ import Question from './Question';
 import Search from './Search';
 import $ from 'jquery';
 const authConfig = require("../auth_config.json");
-const backend = 'https://triviasiabl.herokuapp.com/';
+const backend = 'https://cors-anywhere.herokuapp.com/https://triviasiabl.herokuapp.com/';
 
 class QuestionView extends Component {
   constructor(props){
