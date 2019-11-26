@@ -8,7 +8,7 @@ const authConfig = require("./src/auth_config.json");
 const cors = require('cors');
  
 const app = express();
-
+const proxy = require('http-proxy-middleware');
 const port = process.env.SERVER_PORT|| 5000;
 
 if (!authConfig.domain || !authConfig.audience) {
