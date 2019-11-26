@@ -4,7 +4,7 @@ import '../stylesheets/App.css';
 import EditFormView from './EditFormView';
 import $ from 'jquery';
  
-const backend = 'https://cors-anywhere.herokuapp.com/https://triviasiabl.herokuapp.com';
+const backend = 'https://cors-anywhere-siabl.herokuapp.com/https://triviasiabl.herokuapp.com';
 
 class EditQuestion extends Component {
   constructor(props){

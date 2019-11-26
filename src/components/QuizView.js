@@ -4,7 +4,7 @@ import $ from 'jquery';
 import '../stylesheets/QuizView.css';
 
 const questionsPerPlay = 5; 
-const backend = 'https://triviasiabl.herokuapp.com/';
+const backend = 'https://cors-anywhere-siabl.herokuapp.com/https://triviasiabl.herokuapp.com';
 
 class QuizView extends Component {
   constructor(props){

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import '../stylesheets/EditFormView.css';
-const backend = 'https://cors-anywhere.herokuapp.com/https://triviasiabl.herokuapp.com';
+const backend = 'https://cors-anywhere-siabl.herokuapp.com/https://triviasiabl.herokuapp.com';
 
 class EditFormView extends Component {
   constructor(props){

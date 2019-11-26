@@ -29,7 +29,8 @@ class FormView extends Component {
       url: backend+`/categories`,
       headers: {
         'Authorization':'Bearer '+ this.props.location.token_data,   
-        'Content-Type':'application/json'
+        'Content-Type':'application/json',
+        'Origin':true
       }, //TODO: update request URL
       type: "GET",
       success: (result) => {
