@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import '../stylesheets/FormView.css';
 import Select  from 'react-dropdown-select'
-const backend = 'https://cors-anywhere.herokuapp.com/https://triviasiabl.herokuapp.com';
-const backend2 = 'https://triviasiabl.herokuapp.com';
+const backend = 'https://cors-anywhere-siabl.herokuapp.com/https://triviasiabl.herokuapp.com';
 
 class FormView extends Component {
   constructor(props){

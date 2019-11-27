@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import withUnmounted from '@ishawnwang/withunmounted'
+import withUnmounted from '@ishawnwang/withunmounted';
 import '../stylesheets/App.css';
 import Question from './Question';
 import Search from './Search';
