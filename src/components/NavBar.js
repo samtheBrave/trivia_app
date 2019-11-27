@@ -31,7 +31,7 @@ const NavBar = () => {
     logout({
       returnTo: window.location.origin
     });
-  console.log(Token_data)
+   
   return (
     <div className="nav-container">
       <Navbar color="light" light expand="md">
