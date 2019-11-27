@@ -145,8 +145,20 @@ Demo app is hosted at
 ```bash
 https://triviafrontend.herokuapp.com/
 ```
+##Special Notes
 
+Demo app calls backend server api through 
+
+ ```bash
+'https://cors-anywhere-siabl.herokuapp.com/https://triviasiabl.herokuapp.com' + "api endpoints"
+```
+to resolve CORS error when hosting on heroku else just add 
  
+```bash
+"proxy": "https://triviasiabl.herokuapp.com"
+```
+at package.json during development phase 
+
 
 
 
