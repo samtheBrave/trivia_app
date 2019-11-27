@@ -1,5 +1,5 @@
 {
   "domain": "siaboonleong.auth0.com",
   "clientId": "tEabauzpaeWSgh0W3MOjveN1xpF0aedf",
-  "audience": "https://trivia-endpoint/",
+  "audience": "https://trivia-endpoint/"
 }
