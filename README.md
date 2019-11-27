@@ -53,20 +53,6 @@ function (user, context, callback) {
     });
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Create a Free Auth0 Account
 
 1. Go to [Auth0](https://auth0.com/signup) and click Sign Up.
